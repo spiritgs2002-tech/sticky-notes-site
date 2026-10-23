@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一笔勾销 · 隐私政策</title>
+<style>
+  :root {
+    --paper: #FAFAF7;
+    --card: #FFFFFF;
+    --ink: #1E1E2E;
+    --secondary: #6E6E80;
+    --indigo: #5B5BD6;
+    --indigo-soft: #EEEEFB;
+    --line: #E8E8E2;
+    --green: #2E9E6B;
+    --green-soft: #E8F5EE;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  /* 头部 */
+  header { text-align: center; margin-bottom: 40px; }
+  .appicon {
+    width: 72px; height: 72px; border-radius: 18px; margin: 0 auto 16px;
+    background: linear-gradient(135deg, #5B5BD6 0%, #8B5BD6 100%);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(91,91,214,0.25);
+  }
+  .appicon svg { width: 40px; height: 40px; }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.5px; }
+  .subtitle { color: var(--secondary); font-size: 14px; margin-top: 6px; }
+  .updated { color: var(--secondary); font-size: 13px; margin-top: 10px; }
+
+  /* 语言切换 */
+  .langbar { display: flex; justify-content: center; gap: 8px; margin: 24px 0 32px; }
+  .langbar button {
+    border: 1px solid var(--line); background: var(--card); color: var(--secondary);
+    padding: 6px 20px; border-radius: 999px; font-size: 14px; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .langbar button.active {
+    background: var(--indigo); border-color: var(--indigo); color: #fff; font-weight: 600;
+  }
+
+  /* 核心声明 */
+  .headline {
+    background: var(--green-soft); border: 1px solid #BFE5D0;
+    border-radius: 16px; padding: 24px 28px; margin-bottom: 36px; text-align: center;
+  }
+  .headline .badge {
+    display: inline-block; background: var(--green); color: #fff; font-size: 12px;
+    font-weight: 700; padding: 3px 12px; border-radius: 999px; margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .headline p { font-size: 16px; font-weight: 600; }
+
+  /* 章节 */
+  section { margin-bottom: 32px; }
+  h2 {
+    font-size: 18px; font-weight: 700; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  h2::before {
+    content: ""; width: 4px; height: 18px; border-radius: 2px; background: var(--indigo);
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px 24px;
+  }
+  .card p { margin-bottom: 8px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card ul { padding-left: 20px; }
+  .card li { margin-bottom: 6px; }
+  .card li:last-child { margin-bottom: 0; }
+  strong { font-weight: 700; }
+  .none { color: var(--green); font-weight: 700; }
+
+  /* 支持小节 */
+  .support {
+    background: var(--indigo-soft); border: 1px solid #D5D5F0; border-radius: 14px;
+    padding: 20px 24px; margin-top: 40px;
+  }
+  .support h2::before { background: var(--indigo); }
+  .support a { color: var(--indigo); }
+  code {
+    background: #F0F0EB; padding: 2px 8px; border-radius: 6px; font-size: 13px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  footer {
+    margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line);
+    text-align: center; color: var(--secondary); font-size: 13px;
+  }
+
+  [lang="en"] { display: none; }
+  body.show-en [lang="zh"] { display: none; }
+  body.show-en [lang="en"] { display: block; }
+
+  @media print {
+    .langbar { display: none; }
+    [lang="en"] { display: block !important; }
+    [lang="zh"] { display: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="appicon">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+      <path d="M4 12.5l5 5L20 6.5"/>
+    </svg>
+  </div>
+  <h1>一笔勾销 · 隐私政策</h1>
+  <div class="subtitle">StickyNotes — Privacy Policy</div>
+  <div class="updated">最后更新：2026 年 10 月 23 日 · Last updated: October 23, 2026</div>
+</header>
+
+<div class="langbar">
+  <button id="btn-zh" class="active" onclick="setLang('zh')">中文</button>
+  <button id="btn-en" onclick="setLang('en')">English</button>
+</div>
+
+<div class="headline" lang="zh">
+  <div class="badge">核 心 声 明</div>
+  <p>一笔勾销完全在您的设备本地运行。<br><strong>我们不收集、不存储、不上传、不共享您的任何个人数据。</strong></p>
+</div>
+<div class="headline" lang="en">
+  <div class="badge">CORE COMMITMENT</div>
+  <p>StickyNotes runs entirely on your device.<br><strong>We do not collect, store, upload, or share any of your personal data.</strong></p>
+</div>
+
+<div lang="zh">
+
+<section>
+  <h2>一、我们收集哪些信息</h2>
+  <div class="card">
+    <p><span class="none">我们不收集任何信息。</span></p>
+    <ul>
+      <li><strong>待办内容</strong>：您创建的所有待办、已办事项仅保存在您的设备本地，我们无法访问、无法查看。</li>
+      <li><strong>设备信息</strong>：我们不收集设备型号、系统版本、设备标识符等任何信息。</li>
+      <li><strong>使用数据</strong>：我们不记录任何使用行为，不含任何统计分析组件。</li>
+      <li><strong>位置与权限</strong>：我们不请求、不访问您的位置、相册、通讯录等任何敏感权限。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>二、数据存储在哪里</h2>
+  <div class="card">
+    <p>您的全部数据保存在本设备的 App 私有存储容器中。</p>
+    <p>为实现桌面小组件功能，App 与小组件扩展通过 iOS/macOS 系统的 App Groups 机制在<strong>同一设备内部</strong>共享数据。该共享仅发生在您的设备内部，不经过任何网络传输。</p>
+    <p>当您删除本 App 时，全部数据将随之<strong>永久删除</strong>，不可恢复。</p>
+  </div>
+</section>
+
+<section>
+  <h2>三、第三方服务</h2>
+  <div class="card">
+    <p>本 App 当前版本<strong>不含任何第三方服务</strong>，无广告 SDK、无统计 SDK、无崩溃收集组件。</p>
+    <p>后续版本如引入 App 内购买（In-App Purchase），购买流程将由 Apple 全权处理，我们不接触、不存储您的任何支付信息。</p>
+  </div>
+</section>
+
+<section>
+  <h2>四、儿童隐私</h2>
+  <div class="card">
+    <p>本 App 适合所有年龄段的用户使用。由于我们不收集任何数据，我们不会有意收集儿童的任何信息。</p>
+  </div>
+</section>
+
+<section>
+  <h2>五、您的权利</h2>
+  <div class="card">
+    <p>您可以随时在 App 内编辑或删除任意待办事项；删除本 App 即可清除全部数据。</p>
+    <p>您无需向我们提出任何数据请求——因为我们从不持有您的数据。</p>
+  </div>
+</section>
+
+<section>
+  <h2>六、隐私政策的更新</h2>
+  <div class="card">
+    <p>如本政策发生变更，我们将更新本页面并同步修改"最后更新"日期；重大变更将通过 App 版本更新说明告知。</p>
+  </div>
+</section>
+
+<div class="support">
+  <h2>支持与反馈 · Support</h2>
+  <p><strong>常见问题</strong></p>
+  <ul>
+    <li><strong>如何清空全部数据？</strong>删除本 App 即可，数据仅存于本机，随之永久删除。</li>
+    <li><strong>换新手机后数据会同步吗？</strong>当前版本为纯本地应用，数据不跨设备同步；换机前请手动处理重要事项。云同步功能已在规划中。</li>
+    <li><strong>为什么 App 不需要登录？</strong>因为没有账号系统——这是我们刻意为之的设计，不是遗漏。</li>
+  </ul>
+  <p style="margin-top:12px"><strong>联系我们</strong>：对隐私政策或本 App 有任何疑问，请发送邮件至 <a href="mailto:spiritgs@qq.com">spiritgs@qq.com</a>。</p>
+</div>
+
+</div>
+
+<div lang="en">
+
+<section>
+  <h2>1. Information We Collect</h2>
+  <div class="card">
+    <p><span class="none">We collect no information.</span></p>
+    <ul>
+      <li><strong>Your content</strong>: All to-dos and completed items you create stay solely on your device. We cannot access or view them.</li>
+      <li><strong>Device information</strong>: We do not collect device model, OS version, identifiers, or any other device data.</li>
+      <li><strong>Usage data</strong>: We record no usage behavior and include no analytics components.</li>
+      <li><strong>Permissions</strong>: We never request access to your location, photos, contacts, or any other sensitive data.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>2. Where Your Data Is Stored</h2>
+  <div class="card">
+    <p>All your data is stored in the app's private container on your device.</p>
+    <p>To provide the home-screen widget, the app and its widget extension share data through the system App Groups mechanism <strong>within the same device only</strong>. This sharing never travels over any network.</p>
+    <p>When you delete the app, all data is <strong>permanently deleted</strong> and cannot be recovered.</p>
+  </div>
+</section>
+
+<section>
+  <h2>3. Third-Party Services</h2>
+  <div class="card">
+    <p>The current version of this app includes <strong>no third-party services</strong> — no advertising SDKs, no analytics SDKs, no crash-reporting components.</p>
+    <p>If a future version introduces In-App Purchases, all purchase processing will be handled entirely by Apple. We never touch or store your payment information.</p>
+  </div>
+</section>
+
+<section>
+  <h2>4. Children's Privacy</h2>
+  <div class="card">
+    <p>This app is suitable for users of all ages. Since we collect no data, we do not knowingly collect any information from children.</p>
+  </div>
+</section>
+
+<section>
+  <h2>5. Your Rights</h2>
+  <div class="card">
+    <p>You may edit or delete any item in the app at any time; deleting the app removes all data entirely.</p>
+    <p>You never need to send us a data request — because we never hold your data.</p>
+  </div>
+</section>
+
+<section>
+  <h2>6. Changes to This Policy</h2>
+  <div class="card">
+    <p>If this policy changes, we will update this page and the "last updated" date. Material changes will be announced in the app's release notes.</p>
+  </div>
+</section>
+
+<div class="support">
+  <h2>Support &amp; Feedback</h2>
+  <p><strong>FAQ</strong></p>
+  <ul>
+    <li><strong>How do I erase all data?</strong> Delete the app. Data lives only on this device and is permanently removed with it.</li>
+    <li><strong>Will my data sync to a new phone?</strong> The current version is fully local; data does not sync across devices. Cloud sync is on the roadmap.</li>
+    <li><strong>Why is there no login?</strong> Because there are no accounts — by design, not by oversight.</li>
+  </ul>
+  <p style="margin-top:12px"><strong>Contact us</strong>: Questions about this policy or the app? Email <a href="mailto:spiritgs@qq.com">spiritgs@qq.com</a>.</p>
+</div>
+
+</div>
+
+<footer>
+  一笔勾销 StickyNotes · 本地优先 · 无需账号 · 数据不出设备<br>
+  Local-first · No account · Data never leaves your device
+</footer>
+
+</div>
+
+<script>
+function setLang(lang) {
+  document.body.classList.toggle('show-en', lang === 'en');
+  document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+}
+</script>
+</body>
+</html>
