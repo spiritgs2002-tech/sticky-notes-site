@@ -100,14 +100,14 @@
     text-align: center; color: var(--secondary); font-size: 13px;
   }
 
-  [lang="en"] { display: none; }
-  body.show-en [lang="zh"] { display: none; }
-  body.show-en [lang="en"] { display: block; }
+  [data-lang="en"] { display: none; }
+  body.show-en [data-lang="zh"] { display: none; }
+  body.show-en [data-lang="en"] { display: block; }
 
   @media print {
     .langbar { display: none; }
-    [lang="en"] { display: block !important; }
-    [lang="zh"] { display: none !important; }
+    [data-lang="en"] { display: block !important; }
+    [data-lang="zh"] { display: none !important; }
   }
 </style>
 </head>
@@ -130,16 +130,16 @@
   <button id="btn-en" onclick="setLang('en')">English</button>
 </div>
 
-<div class="headline" lang="zh">
+<div class="headline" data-lang="zh">
   <div class="badge">核 心 声 明</div>
   <p>一笔勾销完全在您的设备本地运行。<br><strong>我们不收集、不存储、不上传、不共享您的任何个人数据。</strong></p>
 </div>
-<div class="headline" lang="en">
+<div class="headline" data-lang="en">
   <div class="badge">CORE COMMITMENT</div>
   <p>StickyNotes runs entirely on your device.<br><strong>We do not collect, store, upload, or share any of your personal data.</strong></p>
 </div>
 
-<div lang="zh">
+<div data-lang="zh">
 
 <section>
   <h2>一、我们收集哪些信息</h2>
@@ -206,7 +206,7 @@
 
 </div>
 
-<div lang="en">
+<div data-lang="en">
 
 <section>
   <h2>1. Information We Collect</h2>
